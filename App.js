@@ -1,13 +1,13 @@
 
 import { StyleSheet, View } from 'react-native';
+import MyStack from './src/Navigation/Navigation';
 import Home from './src/Screens/home';
 import Splash from './src/Screens/splash';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home/>
-      {/* <Splash/> */}
+   <MyStack/>
     </View>
   );
 }
@@ -15,8 +15,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

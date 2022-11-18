@@ -4,9 +4,9 @@ import { color } from '../Constant/color';
 
 const ButtonComponent=({btnLabel, presshandler})=>{
     return(
-        <View style={{height:50,marginTop:20, borderRadius:10, justifyContent:"center", alignItems:"center", backgroundColor:color.splashbtnColor}}>
+        <View style={{height:50,borderRadius:10, marginVertical:20,justifyContent:"center", alignItems:"center", backgroundColor:color.splashbtnColor}}>
             <TouchableOpacity onPress={presshandler}>
-                <Text style={{fontSize:18, fontWeight:"bold", padding:8, color:"#000080"}}>{btnLabel}</Text>
+                <Text style={{fontSize:24, padding:8, color:"#fff"}}>{btnLabel}</Text>
             </TouchableOpacity>
         </View>
     )

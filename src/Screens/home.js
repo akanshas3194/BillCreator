@@ -8,7 +8,7 @@ import * as Print from 'expo-print';
 import { shareAsync } from 'expo-sharing';
 import {PdfCode} from "../Components/pdfConverter";
 
-const Home=()=>{
+const Home=({navigation})=>{
 
     const[billdetails, setBilldetails] =useState({name:'',phone:'',prodQty:'',prodPrice:'',invoiceNumber:0,adress:'',pincode:''})
     const[pickervalue, setPickerValue]=useState({prodName:'', paymentType:''})
@@ -24,8 +24,9 @@ const Home=()=>{
     }
 
     const onHandlerPress=async()=>{
-         let html = PdfCode(billdetails.name, billdetails.adress,pickervalue.prodName, billdetails.phone, billdetails.prodPrice, billdetails.prodQty
-          ,billdetails.invoiceNumber,billdetails.pincode,pickervalue.paymentType, )
+         let html = PdfCode(billdetails.name, billdetails.adress, billdetails.pincode,billdetails.phone, billdetails.invoiceNumber,
+          pickervalue.prodName,  billdetails.prodPrice, billdetails.prodQty
+          ,pickervalue.paymentType, )
 
          try{
           const { uri } = await Print.printToFileAsync({
@@ -34,7 +35,8 @@ const Home=()=>{
           console.log('File has been saved to:', uri);
           await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
 
-          setBilldetails({name:'',phone:'',prodQty:'',prodPrice:'',invoiceNumber:0,adress:'',pincode:''})
+          setBilldetails({name:'',phone:'',prodQty:'',prodPrice:'',invoiceNumber:0,adress:'',pincode:''});
+          navigation.navigate('thanku')
     }catch(err){
       Alert.alert("Make shure You have Internet Connection or contact @+91 8530730017");
   }
@@ -42,7 +44,7 @@ const Home=()=>{
   }
 
     return(
-        <ScrollView style={{flex:1, padding:5}} showsVerticalScrollIndicator={false}>
+        <ScrollView style={{flex:1, padding:10}} showsVerticalScrollIndicator={false}>
             <View style={{height:140, justifyContent: "center",alignItems: "center"}}>
             <Text style={{fontSize:28, fontWeight:"bold"}}>Fill the required details to create the Bill</Text></View>
 

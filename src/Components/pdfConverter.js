@@ -1,4 +1,4 @@
-import dateFormat, { masks } from "dateformat";
+import dateFormat from "dateformat";
 
 function GetTime(date) {
   var hours = parseInt(dateFormat(date, "hh"));
@@ -14,13 +14,14 @@ function GetTime(date) {
 export const PdfCode = (
   name,
   address,
-  phone,
-  prodQty,
-  invoiceNumber,
-  prodPrice,
-  prodName,
-  paymentType,
   pincode,
+  phone,
+  invoiceNumber,
+  prodName,
+  prodPrice,
+  prodQty,
+  paymentType,
+
   
 ) => `<html>
 <head>
@@ -76,6 +77,7 @@ export const PdfCode = (
                   Bill To : <br/>
                   Name : ${name} <br/>
                   Address : ${address} <br/>
+                  Pincode : ${pincode} <br/>
                   Phone No : +91 ${phone}
               </p>
           </div>

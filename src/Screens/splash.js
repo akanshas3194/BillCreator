@@ -2,37 +2,38 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { color } from '../Constant/color';
 
-const Splash=()=>{
+const Splash=({navigation})=>{
     return(
-        <View>
+        <View style={{flex:1, backgroundColor:"#fff", justifyContent:"center", alignItems:"center"}}>
            <View style={styles.headingContainer}><Text style={styles.heading}>BillCreator</Text></View> 
-          <Image source={require('../Image/logo.png')} style={{borderRadius:40}}/>
-          <TouchableOpacity style={styles.container}>
-            <Text style={styles.textStyle}>Create Bill here ~</Text></TouchableOpacity>
-        </View>
+          <Image source={require('../Image/logo.png')} style={{borderRadius:40, marginVertical:10}}/>
+          <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('Home')}>
+            <Text style={styles.textStyle}>Create Bill here</Text></TouchableOpacity>
+       </View>
     )
 }
 
 const styles = StyleSheet.create({
     headingContainer:{
-        justifyContent:"center",
-        alignItems:"center",
-        height:100, bottom:80
+        height:150, bottom:10,
+
     },
     heading:{
-        fontSize:48,
+        fontSize:68,
         fontWeight:"bold"
     },
     container:{
         justifyContent:"center",
         alignItems:"center",
-        marginTop:15,
+        marginTop:25,
         backgroundColor:color.splashbtnColor,
-        borderRadius:20
+        borderRadius:8,
+        padding:5
     },
     textStyle:{
         fontSize:22,
-        padding:4
+        padding:4,
+        color:"#fff"
        
     }
 })

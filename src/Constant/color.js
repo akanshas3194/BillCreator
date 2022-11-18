@@ -1,5 +1,5 @@
 export const color={
     backGroundColor:"#e6e6fa",
-    splashbtnColor:"#e0ffff",
+    splashbtnColor:"#000000",
     btnColor:"#7b68ee"
 }
