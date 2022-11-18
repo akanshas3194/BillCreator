@@ -43,7 +43,7 @@ export const PdfCode = (
       <div style="display: flex;
       flex-direction: column;
       align-items: flex-start;
-      font-size: 2rem;  
+      font-size: 3rem;  
       padding-left: 20px;">BillCreator<br></div>
   <div style="
   display: flex;
@@ -147,7 +147,7 @@ export const PdfCode = (
       <div style="height:auto; padding: 20px; margin-top:50">
           <p>Details - <br/>
          Akansha Saxena<br/>
-         7891824165</br>
+         7892224165</br>
           </p>
       </div>
   </div>
